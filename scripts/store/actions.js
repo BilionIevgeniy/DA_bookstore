@@ -1,4 +1,4 @@
-import { renderAllBooks, renderBook } from "../render.js";
+import { renderAllBooks, renderComments, renderLikeBtn } from "../render.js";
 
 export const ACTION_HANDLERS = {
   like: handleLikeAction,
@@ -19,7 +19,7 @@ function handleLikeAction(booksState, { id }) {
       return book;
     }),
   ];
-  renderBook(newBook);
+  renderLikeBtn(newBook);
   return newBooksState;
 }
 
@@ -51,6 +51,6 @@ function handleCommentAction(booksState, { id, data: { comment, name } }) {
       }
     }),
   ];
-  renderBook(newBook);
+  renderComments(newBook);
   return newBooksState;
 }

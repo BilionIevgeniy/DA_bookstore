@@ -23,7 +23,7 @@ function onFormInput(event) {
 
   if (form) {
     const btn = form.querySelector(".save-comment");
-    btn.disabled = !event.target.closest("form").checkValidity();
+    btn.disabled = !form.checkValidity();
   }
 }
 

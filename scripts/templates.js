@@ -65,7 +65,7 @@ export function generateBookTemplate(book) {
   `;
 }
 
-function generateCommentTemplate(comments) {
+export function generateCommentTemplate(comments) {
   return comments.length
     ? comments
         .map(({ name, comment }) => {
