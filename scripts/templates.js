@@ -1,6 +1,4 @@
-import { booksState } from "./store.js";
-
-function generateBookTemplate(book) {
+export function generateBookTemplate(book) {
   const {
     id,
     favorite,
@@ -48,7 +46,7 @@ function generateBookTemplate(book) {
         <div class="comments-section">
           <h3>Kommentare:</h3>
           <ul class="comments-list">
-          ${generateComment(comments)}
+          ${generateCommentTemplate(comments)}
           </ul>
 
           <form class="comment-form">
@@ -67,7 +65,7 @@ function generateBookTemplate(book) {
   `;
 }
 
-function generateComment(comments) {
+function generateCommentTemplate(comments) {
   return comments.length
     ? comments
         .map(({ name, comment }) => {
@@ -77,13 +75,4 @@ function generateComment(comments) {
         })
         .join("")
     : "<p>kein Kommentar</p>";
-}
-
-export function render() {
-  const container = document.querySelector(".books-wrapper");
-
-  container.innerHTML = [...booksState]
-    .sort((a, b) => b.favorite - a.favorite)
-    .map((book) => generateBookTemplate(book))
-    .join("");
 }

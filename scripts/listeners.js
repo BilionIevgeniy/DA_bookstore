@@ -1,5 +1,5 @@
+import { render } from "./index.js";
 import { applyAction } from "./store.js";
-import { render } from "./templates.js";
 
 const saveCommentBtns = document.querySelectorAll(".save-comment");
 const bookWrapper = document.querySelector(".books-wrapper");
