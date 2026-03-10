@@ -48,17 +48,7 @@ function generateBookTemplate(book) {
         <div class="comments-section">
           <h3>Kommentare:</h3>
           <ul class="comments-list">
-          ${
-            comments.length
-              ? comments
-                  .map(({ name, comment }) => {
-                    return `<li>
-                <strong>[${name}]:</strong> ${comment}
-              </li>`;
-                  })
-                  .join("")
-              : "<p>kein Kommentar</p>"
-          }
+          ${generateComment(comments)}
           </ul>
 
           <form class="comment-form">
@@ -75,6 +65,18 @@ function generateBookTemplate(book) {
         </div>
       </div>
   `;
+}
+
+function generateComment(comments) {
+  return comments.length
+    ? comments
+        .map(({ name, comment }) => {
+          return `<li>
+                <strong>[${name}]:</strong> ${comment}
+              </li>`;
+        })
+        .join("")
+    : "<p>kein Kommentar</p>";
 }
 
 export function render() {
