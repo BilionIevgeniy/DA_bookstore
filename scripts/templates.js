@@ -16,11 +16,11 @@ export function generateBookTemplate(book) {
         <h2 class="book-title">${name}</h2>
 
         <div class="book-img">
-          <img src="../assets/img/book.jpg" alt="Book Cover">
+          <img src="assets/img/book.jpg" alt="Book Cover">
         </div>
 
         <div class="stats-panel">
-          <span class="price">${price} €</span>
+          <span class="price">${Number(price).toFixed(2)} €</span>
           <div class="likes-container">
             <span class="likes-count">${likes}</span>
             <button class="like-btn ${liked ? "active" : ""}" data-action="like">

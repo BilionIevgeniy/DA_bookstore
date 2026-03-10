@@ -23,7 +23,7 @@ h1 {
 .books-wrapper {
   background-color: var(--bg-color);
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
@@ -31,6 +31,7 @@ h1 {
 .book-card {
   display: flex;
   flex-direction: column;
+
   color: var(--text-color);
   border-radius: 12px;
   border: 1px solid var(--border-color);
@@ -133,7 +134,7 @@ h1 {
 .comments-list {
   list-style: none;
   padding: 0;
-  max-height: 150px;
+  height: 150px;
   overflow-y: auto;
   margin-bottom: 15px;
 }

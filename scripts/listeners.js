@@ -1,5 +1,4 @@
-import { render } from "./index.js";
-import { applyAction } from "./store.js";
+import { applyAction } from "./store/store.js";
 
 const saveCommentBtns = document.querySelectorAll(".save-comment");
 const bookWrapper = document.querySelector(".books-wrapper");
@@ -16,7 +15,6 @@ function onComment(event) {
     const { name, comment } = Object.fromEntries(formData.entries());
     applyAction("comment", { id, data: { comment, name } });
     form.reset();
-    render();
   }
 }
 
@@ -39,7 +37,6 @@ function onAction(event) {
 
   if (id && form) {
     applyAction(action, { id });
-    render();
   }
 }
 
